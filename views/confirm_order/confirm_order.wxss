@@ -1,0 +1,82 @@
+@import '/utils/css/style';
+
+.amount-group{
+  padding:15px 10px;
+  border-bottom:10px solid #EEEEEE;
+}
+
+.checkbox{
+  float:left;
+  width:60%;
+}
+
+.checkbox label{
+  width:100%;
+}
+
+.checkbox label text{
+  font-size:14px;
+}
+
+.amount{
+  width:40%;
+  float:left;
+  text-align: right;
+}
+
+.amount text:nth-of-type(2){
+  color:red;
+}
+
+.amount text text{
+  font-size:24rpx;
+}
+
+.select-payment-mode{
+  display: block;
+  padding:15px 10px;
+  border-bottom: 1px solid #E2E2E2;
+}
+
+.payment-mode{
+  display: flex;
+  padding:10px;
+}
+
+.payment-mode > view{
+  flex:1;
+  text-align: center;
+  padding:10px;
+}
+
+.payment-mode > view.default{
+  background:#eee;
+}
+
+.payment-mode > view.default text{
+  color:#F98E2C;
+}
+
+.payment-mode image{
+  width:54px;
+  height: 54px;
+  display: inline-block;
+}
+
+.payment-mode text{
+  display: block;
+  margin-top:5px;
+  font-size:14px;
+  color:#212121;
+}
+
+.now-payment{
+  background: #F98E2C;
+  color:#FFF;
+  border-radius: 0;
+  border:none;
+}
+
+.now-payment.button-hover{
+  background:#FFC32A;
+}

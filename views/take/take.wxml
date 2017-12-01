@@ -1,0 +1,61 @@
+<!--views/take/take.wxml-->
+<swiper duration="300" class='clearfix' bindchange='change'>
+  <swiper-item wx:for="{{orderList}}" wx:for-item="item" wx:key="item">
+    <view>
+      <!--头-->
+      <view class='t-header'>
+        <image src='/images/public/logo.png'></image>
+        <text>高新区项目大厦A座</text>
+        <view>
+          <text>附近</text>
+          <image src='/images/take/1.png'></image>
+        </view>
+      </view>
+
+      <!--柜子信息-->
+      <view class='cabinet'>
+        <view class='cab-title'>
+          <text>柜号</text>
+          <text>取餐口</text>
+        </view>
+        <view class='cab-info clearfix'>
+          <text>1</text>
+          <text>-</text>
+          <text>A05</text>
+        </view>
+        <text class='order-code'>8017 1001 0818 1813</text>
+      </view>
+
+      <!--商品信息-->
+      <view class='goods-info clearfix'>
+        <image src='/images/delete/1.jpg'></image>
+        <view class='info'>
+          <text class='title ellipsis'>清新小甜品早点套餐</text>
+          <text class='desc'>全麦面包1份\n山花原味奶1份\n水果杯1份</text>
+          <text class='price'>￥10</text>
+        </view>
+      </view>
+
+      <!--代取-赠送-取餐-->
+      <view class='give'>
+        <!--头像-按钮-->
+        <view class='btns clearfix'>
+          <text wx:if="{{btnShow}}">代取</text>
+          <image wx:if="{{btnShow}}" class='pic' src='/images/take/3.png'></image>
+          <image class='avatar' src='/images/delete/2.jpg'></image>
+          <image wx:if="{{btnShow}}" class='pic' src='/images/take/2.png'></image>
+          <text wx:if="{{btnShow}}">赠送</text>
+        </view>
+        <!--昵称-->
+        <text class='nickname'>张圆圆</text>
+        <!--日期-->
+        <text class='pay-date'>08-18 07:12</text>
+        <!--取餐-->
+        <button class='now-give' bindtap='nowGive'>立即取餐</button>
+        <text class='appeal' bindtap='callPhone' style="{{btnShow?'':'color:red'}}">申诉</text>
+      </view>
+    </view>
+  </swiper-item>
+</swiper>
+
+<text class='order-number'>{{orderIndex}} / {{orderList.length}}单</text>

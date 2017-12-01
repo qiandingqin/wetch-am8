@@ -1,0 +1,64 @@
+<!--views/my/my.wxml-->
+
+<!--头部-->
+<view class='header'>
+  <!--后退-->
+  <navigator open-type='navigateBack' delta="1">
+    <image class='left' src='../../images/public/back.png'></image>
+  </navigator>
+  <text>{{nick}}</text>
+  <!--设置-->
+  <navigator open-type='navigateBack'>
+    <image class='right' src='../../images/my/p1.png'></image>
+  </navigator>
+</view>
+
+<!--用户信息-->
+<view class='userinfo'>
+  <!--粉丝数-->
+  <view>
+    <text>{{fans}}</text>
+    <text>粉丝</text>
+  </view>
+  <!--头像-->
+  <view>
+    <image src='{{avatar}}'></image>
+  </view>
+  <!--关注数-->
+  <view>
+    <text>{{follow}}</text>
+    <text>关注</text>
+  </view>
+</view>
+
+<!--功能选项-->
+<view class='list-group'>
+  <button class='clear-default-button'>
+    <view class='list-item'>
+      <image src='../../images/my/p2.png'></image>
+      <text>资料</text>
+    </view>
+  </button>
+
+  <button class='clear-default-button'>
+    <view class='list-item'>
+      <image src='../../images/my/p3.png'></image>
+      <text>钱包</text>
+    </view>
+  </button>
+  
+  <button class='clear-default-button'>
+    <view class='list-item'>
+      <image src='../../images/my/p4.png'></image>
+      <text>订单</text>
+    </view>
+  </button>
+  
+  <button class='clear-default-button'>
+    <view class='list-item'>
+      <image src='../../images/my/p5.png'></image>
+      <text>客服</text>
+    </view>
+  </button>
+  
+</view>

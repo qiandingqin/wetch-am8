@@ -1,0 +1,86 @@
+<!--views/index/index.wxml-->
+<view>
+  
+  <view class='top'>
+    <!--位置信息-->
+    <view class='position'>
+      <view class='localtion'>
+        <image class='icon' src='../../images/index/position.png' />
+        <text>{{address}}</text>
+      </view>
+      <!--个人中心-->
+      <view class='myBtn'>
+        <navigator open-type='navigate' url='../my/my'>
+          <image class='icon' src='../../images/index/my.png' />
+        </navigator>
+      </view>
+    </view>
+    
+    
+    <!--待取-->
+    <text class='take'>{{abc}}待取999</text>
+
+    <!--swiper S-->
+    <swiper class='banner' duration="300"  indicator-dots circular indicator-color="#FFF" indicator-active-color="#F98E2C" class='w-adv'>
+      <block wx:key="item" wx:for="{{pics}}">
+        <swiper-item>
+          <image style='width:100%;' src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!--swiper E-->
+  </view>
+
+  <!--nowbuy S-->
+  <view>
+    <swiper class='w-nowBuy' duration="300" autoplay circular vertical >
+    <block wx:key="item" wx:for="{{nowbuys}}">
+      <swiper-item>
+        <image src="{{item.avatar}}"></image>
+        <text class='ellipsis'>{{item.nick}} 1分钟前 购买了 {{item.goods_name}}</text>
+      </swiper-item>
+    </block>
+  </swiper>
+  </view>
+  <!--nowbuy E-->
+
+  <!--goods list S-->
+  <view class='goods-list'>
+    <!--goods info item-->
+    <view class='goods-item' wx:key="item" wx:for-index="index" wx:for-item="item" wx:for="{{goodsList}}">
+      <!--缩略图-->
+      <image bindtap='preViewImage' data-index="{{index}}" src='{{item.thumbnail}}'></image>
+      <!--商品基础信息-->
+      <view class='goods-info'>
+        <!--商品标题-->
+        <text class='title-group'>
+          <text class='title'>{{item.goods_name}}</text>
+          <text class='stock'>剩余<text>{{item.stock}}</text>份</text>
+        </text>
+        <!--套餐内容 item 可能需要列表渲染，预计后端返回数组类型-->
+        <view class='contents'>
+          <text class='content ellipsis' wx:key="_item" wx:for-item="_item" wx:for="{{item.content}}">{{_item.name}}{{_item.number}}{{_item.unit}}</text>
+        </view>
+        <!--单价 及 数量添加-->
+        <view class='goods-info-bottom'>
+          <!--单价-->
+          <text class='price-text'>￥<text>{{item.price}}</text></text>
+          <!--数量增减-->
+          <view class='number'>
+            <button bindtap="minus" data-index="{{index}}" class='minus' plain size='mini'>-</button>
+            <text>{{item.cart}}</text>
+            <button bindtap="add" data-index="{{index}}" class='add' plain size='mini'>+</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--goods list E-->
+
+  <!--amount S-->
+  <view class="amount-group {{isHide}}" style="opacity:{{isHide=='bounceOutLeft'?1:0}}">
+    <text>合计: <text>￥</text><text>{{amount}}</text></text>
+    <button plain bindtap="confirm">确认订单</button>
+  </view>
+  <!--amount E-->
+</view>

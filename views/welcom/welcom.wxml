@@ -1,0 +1,8 @@
+<!--welcom.wxml-->
+<swiper duration="{{duration}}" indicator-dots class='welcom' bindchange="change">
+  <block wx:key="item" wx:for="{{pics}}">
+    <swiper-item bindtouchmove='touchmove' bindtouchstart="touchStart">
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>

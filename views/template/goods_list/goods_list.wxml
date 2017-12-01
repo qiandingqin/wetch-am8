@@ -1,0 +1,27 @@
+<!--商品列表模板-用于购买订单-历史订单-->
+<template name="goods_list">
+  <view class='tp-g-list-group'>
+    
+    <view class='tp-g-list-item clearfix' wx:key="item" wx:for="{{data}}" wx:for-item="item">
+      <!--缩略图-->
+      <image class='tp-thumbnail' src='{{item.thumbnail}}'></image>
+      <!--商品信息-->
+      <view class='tp-goods-info'>
+        <!--商品标题-->
+        <text class='ellipsis'>{{item.goods_name}}</text>
+        <!--商品的描述-->
+        <view class='tp-goods-desc clearfix'>
+          <text wx:for-item="_item" wx:key="_item" wx:for="{{item.content}}">{{_item.name}}{{_item.number}}{{_item.unit}}</text>
+        </view>
+        <!--单价以及数量-->
+        <view class='tp-price clearfix'>
+          <text><text>￥</text>{{item.price}}</text>
+          <text><text>X</text>{{item.stock}}</text>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+
+</template>

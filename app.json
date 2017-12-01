@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "views/main/main",
+    "views/confirm_order/confirm_order",
+    "views/welcom/welcom",
+    "views/index/index",
+    "views/my/my",
+    "views/template/goods_list/goods_list",
+    "views/take/take"
+  ],
+  "window": {
+    "navigationBarTitleText": "早8点",
+    "navigationBarBackgroundColor": "#F98E2C"
+  }
+}

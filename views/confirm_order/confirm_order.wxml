@@ -1,0 +1,37 @@
+<import src="/views/template/goods_list/goods_list"/>
+
+<template is="goods_list" data="{{data: goodsList}}"/>
+<!--折扣-->
+<view class='clearfix amount-group'>
+  <!--复选框-->
+  <checkbox-group class="checkbox" bindchange="checkboxChange">
+    <label class="checkbox">
+      <checkbox value="true" checked />
+      <text>可用折扣卷抵扣<text>-5</text></text>
+    </label>
+  </checkbox-group>
+  <!--总计-->
+  <view class='amount'>
+    <text>合计:</text>
+    <text><text>￥</text>7.00</text>
+  </view>
+</view>
+<!--支付方式-->
+<text class='select-payment-mode'>选择支付方式</text>
+<!--支付方式-->
+<view class='payment-mode'>
+  <view class='default'>
+    <image src='/images/public/wallet-payment.png'></image>
+    <text>钱包支付</text>
+  </view>
+  <view>
+    <image src='/images/public/wechat-payment.png'></image>
+    <text>微信支付</text>
+  </view>
+  <view>
+    <image src='/images/public/ali-payment.png'></image>
+    <text>支付宝</text>
+  </view>
+</view>
+<!--立即支付按钮-->
+<button class='now-payment' bindtap="nowPayment">立即支付</button>

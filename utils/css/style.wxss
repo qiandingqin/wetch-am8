@@ -1,0 +1,174 @@
+.ellipsis{
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon{
+  width:24px;
+  height: 24px;
+}
+
+.w-hide{
+  display: none;
+}
+
+.clearfix{
+  zoom:0;
+}
+
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.clear-default-button{
+  margin:0;
+  padding:0;
+  text-align: inherit;
+  display: inherit;
+  font-size: inherit;
+  border-radius: inherit;
+  line-height: inherit;
+  color:inherit;
+  background: inherit;
+}
+
+.clear-default-button.button-hover{
+  background:#dedede;
+}
+
+.clear-default-button::after{
+  width:0;
+  height:0;
+}
+
+.bounceInLeft{
+  animation: bounceInLeft .7s both;
+}
+
+.bounceOutLeft{
+  animation: bounceOutLeft .7s both;
+}
+
+@keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes bounceOutLeft {
+  20% {
+    opacity: 1;
+    transform: translate3d(20px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(-2000px, 0, 0);
+  }
+}
+
+.header{
+  height:40px;
+  text-align: center;
+  position: relative;
+}
+.header navigator{
+  width:24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  top:8px;
+}
+.header navigator image{
+  width:100%;
+  height: 100%;
+}
+
+.header navigator:nth-of-type(1){
+  left:15px;
+}
+
+.header navigator:nth-of-type(2){
+  right:15px;
+  top:10px;
+}
+
+.header text{
+  line-height: 40px;
+}
+
+/*模板样式 小程序这B玩意没有自己独立的CSS,JS 只能用于简单的数据列表展示*/
+/*商品列表*/
+.tp-g-list-item{
+  border-bottom:1px solid #E2E2E2;
+  padding:15px 10px;
+}
+
+.tp-g-list-item image.tp-thumbnail{
+  width:200rpx;
+  height:200rpx;
+  border-radius: 10px;
+  float:left;
+}
+
+.tp-goods-info{
+  width:440rpx;
+  height:200rpx;
+  float:right;
+}
+
+.tp-goods-desc text{
+  width:50%;
+  float:left;
+  margin-top:10rpx;
+  color:#808080;
+  font-size:28rpx;
+}
+
+.tp-price{
+  margin-top:12rpx;
+}
+
+.tp-price > text{
+  width:50%;
+  float: left;
+  color:red;
+}
+
+.tp-price > text  text{
+  font-size:24rpx;
+  margin-right:5rpx;
+}
+
+.tp-price > text:nth-of-type(2){
+  text-align: right;
+  color:#808080;
+}

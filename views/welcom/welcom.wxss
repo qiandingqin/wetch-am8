@@ -1,0 +1,14 @@
+/* welcom.wxss */
+page{
+  width:100%;
+  height: 100%;
+}
+.welcom{
+  width:100%;
+  height: 100%;
+}
+
+.welcom image{
+  width:100%;
+  height: 100%;
+}
